@@ -1,0 +1,94 @@
+# Punch list: Sample Unit 4B
+
+16 items from 7 photos across 5 rooms. 2 flagged for review.
+
+## Summary by trade
+
+| Trade | High | Medium | Low | Total |
+|---|---|---|---|---|
+| Carpentry | 0 | 2 | 2 | 4 |
+| Drywall | 0 | 1 | 0 | 1 |
+| Electrical | 2 | 0 | 0 | 2 |
+| Flooring | 0 | 2 | 0 | 2 |
+| General | 0 | 1 | 0 | 1 |
+| HVAC | 0 | 1 | 0 | 1 |
+| Paint | 0 | 0 | 3 | 3 |
+| Plumbing | 1 | 1 | 0 | 2 |
+
+## Bathroom
+
+### Flooring
+
+- [ ] **PL-001** [medium] Grout missing along the tub to floor joint. (photos: bathroom_01.png)
+
+### Paint
+
+- [ ] **PL-002** [low] Caulk smeared onto the wall paint beside the vanity. (photos: bathroom_01.png)
+
+### Plumbing
+
+- [ ] **PL-003** [medium] Faucet handle is loose and spins past the stop. (photos: bathroom_01.png)
+
+## Bedroom 1
+
+### Carpentry
+
+- [ ] **PL-004** [low] Baseboard has a gap at the outside corner. (photos: bedroom_01.png)
+
+### Drywall
+
+- [ ] **PL-005** [medium] Visible tape seam and unsanded compound beside the closet. (photos: bedroom_01.png)
+
+### HVAC
+
+- [ ] **PL-006** [medium] Floor register cover is missing. (needs review) (photos: bedroom_01.png)
+
+## Hallway
+
+### Carpentry
+
+- [ ] **PL-007** [medium] Door rubs the jamb at the top latch side. (photos: hallway_01.png)
+
+### Electrical
+
+- [ ] **PL-008** [high] Smoke detector base is mounted with no detector head. (photos: hallway_01.png)
+
+## Kitchen
+
+### Carpentry
+
+- [ ] **PL-009** [medium] Upper cabinet door hangs out of line with its neighbour. (photos: kitchen_01.png)
+
+### Electrical
+
+- [ ] **PL-010** [high] Outlet to the right of the sink has no cover plate. (photos: kitchen_01.png, kitchen_02.png)
+
+### Flooring
+
+- [ ] **PL-011** [medium] Chipped tile at the dishwasher edge. (needs review) (photos: kitchen_02.png)
+
+### Paint
+
+- [ ] **PL-012** [low] Roller marks and thin coverage on the wall above the base cabinets. (photos: kitchen_01.png)
+
+### Plumbing
+
+- [ ] **PL-013** [high] Slow drip at the supply line under the sink. (photos: kitchen_02.png)
+
+## Living Room
+
+### Carpentry
+
+- [ ] **PL-014** [low] Nail holes in the window casing are not filled. (photos: living_room_01.png)
+
+### General
+
+- [ ] **PL-015** [medium] Window screen is missing. (photos: living_room_01.png)
+
+### Paint
+
+- [ ] **PL-016** [low] Paint overlap on the window glass along the lower sash. (photos: living_room_01.png)
+
+## Photos not analyzed
+
+- unknown_01.png: image is too dark to analyze

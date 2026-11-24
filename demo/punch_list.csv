@@ -1,0 +1,17 @@
+id,room,trade,description,severity,confidence,needs_review,photos,status
+PL-001,Bathroom,Flooring,Grout missing along the tub to floor joint.,medium,0.85,no,bathroom_01.png,open
+PL-002,Bathroom,Paint,Caulk smeared onto the wall paint beside the vanity.,low,0.70,no,bathroom_01.png,open
+PL-003,Bathroom,Plumbing,Faucet handle is loose and spins past the stop.,medium,0.90,no,bathroom_01.png,open
+PL-004,Bedroom 1,Carpentry,Baseboard has a gap at the outside corner.,low,0.80,no,bedroom_01.png,open
+PL-005,Bedroom 1,Drywall,Visible tape seam and unsanded compound beside the closet.,medium,0.90,no,bedroom_01.png,open
+PL-006,Bedroom 1,HVAC,Floor register cover is missing.,medium,0.55,yes,bedroom_01.png,open
+PL-007,Hallway,Carpentry,Door rubs the jamb at the top latch side.,medium,0.85,no,hallway_01.png,open
+PL-008,Hallway,Electrical,Smoke detector base is mounted with no detector head.,high,0.90,no,hallway_01.png,open
+PL-009,Kitchen,Carpentry,Upper cabinet door hangs out of line with its neighbour.,medium,0.85,no,kitchen_01.png,open
+PL-010,Kitchen,Electrical,Outlet to the right of the sink has no cover plate.,high,0.95,no,kitchen_01.png; kitchen_02.png,open
+PL-011,Kitchen,Flooring,Chipped tile at the dishwasher edge.,medium,0.50,yes,kitchen_02.png,open
+PL-012,Kitchen,Paint,Roller marks and thin coverage on the wall above the base cabinets.,low,0.80,no,kitchen_01.png,open
+PL-013,Kitchen,Plumbing,Slow drip at the supply line under the sink.,high,0.75,no,kitchen_02.png,open
+PL-014,Living Room,Carpentry,Nail holes in the window casing are not filled.,low,0.85,no,living_room_01.png,open
+PL-015,Living Room,General,Window screen is missing.,medium,0.70,no,living_room_01.png,open
+PL-016,Living Room,Paint,Paint overlap on the window glass along the lower sash.,low,0.90,no,living_room_01.png,open

@@ -1,0 +1,165 @@
+{
+  "note": "Recorded vision responses for the bundled synthetic sample images. All content is invented. Keys are the SHA-256 of the image bytes.",
+  "recordings": [
+    {
+      "image": "kitchen_01.png",
+      "sha256": "d7e0516f933f7e5d145213c04836307fda22c53f2007044f4a6c3fd4d524e25e",
+      "findings": [
+        {
+          "room": "Kitchen",
+          "trade": "Electrical",
+          "description": "Outlet to the right of the sink has no cover plate.",
+          "severity": "high",
+          "confidence": 0.95
+        },
+        {
+          "room": "Kitchen",
+          "trade": "Paint",
+          "description": "Roller marks and thin coverage on the wall above the base cabinets.",
+          "severity": "low",
+          "confidence": 0.8
+        },
+        {
+          "room": "Kitchen",
+          "trade": "Carpentry",
+          "description": "Upper cabinet door hangs out of line with its neighbour.",
+          "severity": "medium",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "image": "kitchen_02.png",
+      "sha256": "a169636fa2ffeb0483f55935fa2cbbed25405550b01b34b9a704a6af01be5ab4",
+      "findings": [
+        {
+          "room": "kitchen",
+          "trade": "electric",
+          "description": "Outlet to the right of the sink has no cover plate",
+          "severity": "medium",
+          "confidence": 0.9
+        },
+        {
+          "room": "Kitchen",
+          "trade": "Plumbing",
+          "description": "Slow drip at the supply line under the sink.",
+          "severity": "high",
+          "confidence": 0.75
+        },
+        {
+          "room": "Kitchen",
+          "trade": "Flooring",
+          "description": "Chipped tile at the dishwasher edge.",
+          "severity": "medium",
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "image": "bathroom_01.png",
+      "sha256": "3f02b10ec13abfabd79f515b13aaaf2134164819fea9837b3da037dba78f9109",
+      "findings": [
+        {
+          "room": "Bath",
+          "trade": "Plumbing",
+          "description": "Faucet handle is loose and spins past the stop.",
+          "severity": "medium",
+          "confidence": 0.9
+        },
+        {
+          "room": "Bath",
+          "trade": "Tile",
+          "description": "Grout missing along the tub to floor joint.",
+          "severity": "medium",
+          "confidence": 0.85
+        },
+        {
+          "room": "Bath",
+          "trade": "Paint",
+          "description": "Caulk smeared onto the wall paint beside the vanity.",
+          "severity": "low",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "image": "bedroom_01.png",
+      "sha256": "42591697b2f755da77dee970e084c1c5be03a1fcfccdaad411cbd24a54b189a6",
+      "findings": [
+        {
+          "room": "Bedroom 1",
+          "trade": "Drywall",
+          "description": "Visible tape seam and unsanded compound beside the closet.",
+          "severity": "medium",
+          "confidence": 0.9
+        },
+        {
+          "room": "Bedroom 1",
+          "trade": "Carpentry",
+          "description": "Baseboard has a gap at the outside corner.",
+          "severity": "low",
+          "confidence": 0.8
+        },
+        {
+          "room": "Bedroom 1",
+          "trade": "HVAC",
+          "description": "Floor register cover is missing.",
+          "severity": "medium",
+          "confidence": 0.55
+        }
+      ]
+    },
+    {
+      "image": "hallway_01.png",
+      "sha256": "c4d902b9af921096f523e56561dff5927811efd489a2cbb0997d2e2383906094",
+      "findings": [
+        {
+          "room": "Hall",
+          "trade": "Carpentry",
+          "description": "Door rubs the jamb at the top latch side.",
+          "severity": "medium",
+          "confidence": 0.85
+        },
+        {
+          "room": "Hall",
+          "trade": "Electrical",
+          "description": "Smoke detector base is mounted with no detector head.",
+          "severity": "high",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "image": "living_room_01.png",
+      "sha256": "9793fdd8edfd465a8eb908e869dbb5d6cf18fc891fe8c58c357e89f896383bd0",
+      "findings": [
+        {
+          "room": "Living",
+          "trade": "Painting",
+          "description": "Paint overlap on the window glass along the lower sash.",
+          "severity": "low",
+          "confidence": 0.9
+        },
+        {
+          "room": "Living",
+          "trade": "Trim",
+          "description": "Nail holes in the window casing are not filled.",
+          "severity": "low",
+          "confidence": 0.85
+        },
+        {
+          "room": "Living",
+          "trade": "Glazing",
+          "description": "Window screen is missing.",
+          "severity": "medium",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "image": "unknown_01.png",
+      "sha256": "24d462980566082a63eb1f679d4ee1cb75cb0b80ce3c2e0bd765f6e8fb801dee",
+      "error": "image is too dark to analyze"
+    }
+  ]
+}
