@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Iterable
 
 from .models import SEVERITIES, TRADES, Finding, PunchItem, PunchList
-from .vision import VisionClient, VisionError
+from .vision import MEDIA_TYPES, VisionClient, VisionError
 
 DEFAULT_REVIEW_THRESHOLD = 0.6
 
@@ -53,7 +53,8 @@ def normalize_room(raw: str) -> str:
     key = re.sub(r"\s+", " ", raw.strip().lower())
     if key in ROOM_ALIASES:
         return ROOM_ALIASES[key]
-    return key.title()
+    # Not str.title(): that turns "kid's room" into "Kid'S Room" and "2nd" into "2Nd".
+    return " ".join(word[:1].upper() + word[1:] for word in key.split(" "))
 
 
 def normalize_severity(raw: str) -> str:
@@ -84,6 +85,11 @@ def build_punch_list(
 
     for image in images:
         photo_count += 1
+        if image.suffix.lower() not in MEDIA_TYPES:
+            skipped.append(
+                (image.name, f"unsupported image type {image.suffix.lower()}; convert to JPEG or PNG")
+            )
+            continue
         try:
             findings: list[Finding] = client.analyze(image)
         except VisionError as exc:

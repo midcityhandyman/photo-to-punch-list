@@ -92,3 +92,14 @@ def test_unsupported_extension_rejected_before_any_call(tmp_path):
     with pytest.raises(VisionError, match="unsupported image type"):
         ClaudeVisionClient(client=sdk).analyze(odd)
     assert sdk.calls == []
+
+
+def test_client_construction_failure_becomes_vision_error(sample_dir, monkeypatch):
+    import sys
+
+    def boom():
+        raise RuntimeError("no credentials")
+
+    monkeypatch.setitem(sys.modules, "anthropic", SimpleNamespace(Anthropic=boom))
+    with pytest.raises(VisionError, match="could not create the Claude client: no credentials"):
+        ClaudeVisionClient().analyze(sample_dir / "kitchen_01.png")

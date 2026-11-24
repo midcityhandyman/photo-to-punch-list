@@ -79,3 +79,26 @@ def test_cli_errors_on_missing_or_empty_folder(tmp_path, capsys):
     assert main(["--images", str(tmp_path / "nope")]) == 2
     assert main(["--images", str(tmp_path)]) == 2
     assert "error:" in capsys.readouterr().err
+
+
+def test_heic_photos_are_listed_as_not_analyzed(tmp_path, capsys):
+    photos = tmp_path / "photos"
+    photos.mkdir()
+    (photos / "IMG_0001.heic").write_bytes(b"x")
+    (photos / "notes.txt").write_text("not a photo", encoding="utf-8")
+    assert [p.name for p in list_images(photos)] == ["IMG_0001.heic"]
+    out = tmp_path / "out"
+    # every photo failed, so the run exits 1, but the report still says why
+    assert main(["--images", str(photos), "--out", str(out)]) == 1
+    assert "IMG_0001.heic: unsupported image type .heic" in (out / "punch_list.md").read_text(encoding="utf-8")
+
+
+def test_cli_rejects_non_numeric_threshold_from_environment(sample_dir, tmp_path, monkeypatch, capsys):
+    monkeypatch.setenv("PUNCHLIST_REVIEW_THRESHOLD", "high")
+    assert main(["--images", str(sample_dir), "--out", str(tmp_path)]) == 2
+    assert "PUNCHLIST_REVIEW_THRESHOLD is not a number" in capsys.readouterr().err
+    monkeypatch.setenv("PUNCHLIST_REVIEW_THRESHOLD", "0.9")
+    assert main(["--images", str(sample_dir), "--out", str(tmp_path)]) == 0
+    assert "Slow drip at the supply line under the sink. (needs review)" in (
+        tmp_path / "punch_list.md"
+    ).read_text(encoding="utf-8")

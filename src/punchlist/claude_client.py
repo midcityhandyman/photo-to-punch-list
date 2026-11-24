@@ -72,7 +72,10 @@ class ClaudeVisionClient:
                 raise VisionError(
                     "the Claude client needs the anthropic package: pip install -e '.[claude]'"
                 ) from exc
-            self._client = anthropic.Anthropic()
+            try:
+                self._client = anthropic.Anthropic()
+            except Exception as exc:  # e.g. no credentials configured
+                raise VisionError(f"could not create the Claude client: {exc}") from exc
         return self._client
 
     def build_request(self, image_path: Path) -> dict[str, Any]:

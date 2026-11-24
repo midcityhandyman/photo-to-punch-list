@@ -38,10 +38,19 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--review-threshold",
         type=float,
-        default=float(os.environ.get("PUNCHLIST_REVIEW_THRESHOLD", DEFAULT_REVIEW_THRESHOLD)),
-        help="flag items below this confidence for review",
+        default=None,
+        help="flag items below this confidence for review "
+        f"(default: PUNCHLIST_REVIEW_THRESHOLD or {DEFAULT_REVIEW_THRESHOLD})",
     )
     args = parser.parse_args(argv)
+
+    if args.review_threshold is None:
+        raw = os.environ.get("PUNCHLIST_REVIEW_THRESHOLD") or DEFAULT_REVIEW_THRESHOLD
+        try:
+            args.review_threshold = float(raw)
+        except ValueError:
+            print(f"error: PUNCHLIST_REVIEW_THRESHOLD is not a number: {raw!r}", file=sys.stderr)
+            return 2
 
     try:
         images = list_images(args.images)
@@ -50,7 +59,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: {exc}", file=sys.stderr)
         return 2
     if not images:
-        print(f"error: no supported images in {args.images}", file=sys.stderr)
+        print(f"error: no photos found in {args.images}", file=sys.stderr)
         return 2
 
     punch = build_punch_list(images, client, project=args.project, review_threshold=args.review_threshold)

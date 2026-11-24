@@ -88,3 +88,17 @@ def test_failed_photo_is_skipped_not_fatal(fake_client):
     assert punch.photo_count == 2
     assert punch.skipped == [("a.png", "too dark")]
     assert len(punch.items) == 1
+
+
+def test_room_names_keep_apostrophes_and_ordinals():
+    assert normalize_room("kid's room") == "Kid's Room"
+    assert normalize_room("2nd floor bath") == "2nd Floor Bath"
+    assert normalize_room("LIVING ROOM") == "Living Room"
+
+
+def test_unsupported_photo_format_is_reported_without_calling_the_client(fake_client):
+    client = fake_client({"b.jpg": [Finding("Hallway", "Carpentry", "Door rubs.", "medium", 0.9)]})
+    punch = build_punch_list([Path("IMG_0001.HEIC"), Path("b.jpg")], client)
+    assert punch.photo_count == 2
+    assert punch.skipped == [("IMG_0001.HEIC", "unsupported image type .heic; convert to JPEG or PNG")]
+    assert len(punch.items) == 1
